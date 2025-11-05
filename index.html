@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Anne Tischler Makeup</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8eaf6; /* lilás/rosê claro */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #D4AF37; /* dourado */
+            margin-bottom: 5px;
+        }
+
+        p.intro {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-bottom: 60px; /* espaço para os botões fixos */
+        }
+
+        .service-card {
+            background-color: #fff;
+            border: 2px solid #D4AF37;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-card h2 {
+            color: #D4AF37;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            margin: 0 0 10px 0;
+        }
+
+        .service-card span.price {
+            font-weight: bold;
+            color: #D4AF37;
+            font-size: 1.1em;
+        }
+
+        .cta-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .cta-fixed a {
+            background-color: #EAA6C0; /* rosinha chamativo */
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+
+        .cta-fixed a:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .service-card span.price {
+                font-size: 1em;
+            }
+
+            .cta-fixed a {
+                font-size: 0.9em;
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Anne Tischler Makeup</h1>
+    <p class="intro">Sou Anne Tischler, maquiadora profissional em Santa Cecília • SC. Realço sua beleza com naturalidade e confiança. ✨</p>
+
+    <div class="portfolio">
+        <div class="service-card">
+            <h2>Maquiagem Infantil</h2>
+            <p>Leve e divertida, perfeita para aniversários e festas infantis.</p>
+            <span class="price">R$ 40,00</span>
+        </div>
+
+        <div class="service-card">
+            <h2>Maquiagem Express</h2>
+            <p>Rápida e prática, ideal para fotos e compromissos de dia.</p>
+            <span class="price">R$ 80,00</span>
+        </div>
+
+        <div class="service-card">
+            <h2>Maquiagem Social</h2>
+            <p>Perfeita para eventos sociais, jantares e ocasiões especiais.</p>
+            <span class="price">R$ 100,00</span>
+        </div>
+
+        <div class="service-card">
+            <h2>Maquiagem Blindada</h2>
+            <p>Longa duração, resistente ao calor e suor, ideal para festas e casamentos.</p>
+            <span class="price">R$ 120,00</span>
+        </div>
+    </div>
+
+    <!-- Botões fixos chamativos -->
+    <div class="cta-fixed">
+        <a href="https://wa.me/5549984111810?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20make" target="_blank">Fale com Anne</a>
+        <a href="https://instagram.com/annetischlermakeup" target="_blank">Veja o Instagram</a>
+    </div>
+
+</body>
+</html>
