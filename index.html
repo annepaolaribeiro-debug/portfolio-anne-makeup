@@ -1,216 +1,258 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Anne Tischler Makeup</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8eaf6; /* lilás/rosê claro */
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anne Tischler Makeup</title>
+  <meta name="description" content="Portfólio de maquiagem Anne Tischler em Santa Cecília - SC. Realce sua beleza com confiança e naturalidade.">
+  <meta property="og:title" content="Anne Tischler Makeup">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:description" content="Maquiadora em Santa Cecília - SC. Maquiagens para todas as ocasiões.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f9;
+      color: #333;
+      text-align: center;
+    }
 
-        header img.logo {
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
-        }
+    /* Logo */
+    .logo {
+      display: block;
+      margin: 30px auto 10px auto;
+      width: 250px;
+      height: auto;
+    }
 
-        h1 {
-            text-align: center;
-            color: #D4AF37; /* dourado */
-            margin-bottom: 5px;
-        }
+    /* Menu fixo */
+    .navbar {
+      text-align: center;
+      background-color: #fff;
+      border-bottom: 2px solid #D4AF37;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-        p.intro {
-            text-align: center;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
+    .navbar a {
+      color: #D4AF37;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            justify-items: center;
-            margin-bottom: 60px; /* espaço para os botões fixos */
-        }
+    .navbar a:hover {
+      color: #EAA6C0;
+    }
 
-        .service-card {
-            background-color: #fff;
-            border: 2px solid #D4AF37;
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            max-width: 300px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
+    /* Seção de Serviços */
+    #servicos {
+      max-width: 900px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
+    .service-card {
+      background: #fff;
+      border: 1px solid #D4AF37;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .service-card h2 {
-            color: #D4AF37;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
 
-        .service-card p {
-            margin: 0 0 10px 0;
-        }
+    .service-card h3 {
+      color: #D4AF37;
+      margin-bottom: 10px;
+    }
 
-        .service-card span.price {
-            font-weight: bold;
-            color: #D4AF37;
-            font-size: 1.1em;
-        }
+    .service-card p {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
 
-        /* Botões fixos */
-        .cta-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-        }
+    .price {
+      color: #EAA6C0;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: block;
+    }
 
-        .cta-fixed a {
-            background-color: #EAA6C0; /* rosinha */
-            color: white;
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 25px;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, opacity 0.3s ease;
-        }
+    .service-card a {
+      background-color: #EAA6C0;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
 
-        .cta-fixed a.whatsapp {
-            background-color: #EAA6C0; 
-        }
+    .service-card a:hover {
+      background-color: #D48CA8;
+    }
 
-        .cta-fixed a:hover {
-            transform: translateY(-3px);
-            opacity: 0.85;
-        }
+    /* Seção Contato */
+    #contato {
+      background-color: #fff;
+      border-top: 2px solid #D4AF37;
+      margin-top: 50px;
+      padding: 40px 20px;
+    }
 
-        /* Formulário */
-        .contact form {
-            max-width: 400px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    #contato h2 {
+      color: #D4AF37;
+      margin-bottom: 15px;
+    }
 
-        .contact input, 
-        .contact textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #D4AF37;
-        }
+    #contato p {
+      font-size: 1em;
+      margin: 8px 0;
+    }
 
-        .contact button {
-            background-color: #EAA6C0;
-            color: white;
-            font-weight: bold;
-            padding: 12px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-        }
+    #contato a {
+      color: #EAA6C0;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        footer {
-            text-align: center;
-            padding: 25px 10px;
-            background-color: #f8eaf6;
-            color: #333;
-            margin-top: 40px;
-            border-top: 2px solid #D4AF37;
-        }
+    #contato a:hover {
+      text-decoration: underline;
+    }
 
-        footer a {
-            color: #D4AF37;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    /* Rodapé */
+    footer {
+      background-color: #fff;
+      border-top: 1px solid #D4AF37;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
 
-        @media (max-width: 480px) {
-            body { padding: 10px; }
-            h1 { font-size: 1.8em; }
-            .service-card span.price { font-size: 1em; }
-            .cta-fixed a { font-size: 0.9em; padding: 10px 18px; }
-        }
-    </style>
+    /* ==== BOTÕES FLUTUANTES ==== */
+    .float-container {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .float-btn {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    }
+
+    .float-btn.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    .float-btn.whatsapp {
+      background-color: #25D366;
+    }
+
+    @media (max-width: 480px) {
+      .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Logo -->
+  <img src="logoanne.png.png" alt="Anne Tischler Makeup" class="logo">
 
-    <header>
-        <img src="logoanne.png.png" alt="Logo Anne Tischler Makeup" class="logo">
-    </header>
+  <!-- Menu -->
+  <nav class="navbar">
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
-    <p class="intro">Sou Anne Tischler, maquiadora em Santa Cecília • SC. Realço sua beleza com naturalidade e confiança. ✨</p>
-
-    <div class="portfolio">
-        <div class="service-card">
-            <h2>Maquiagem Infantil</h2>
-            <p>Leve e divertida, perfeita para aniversários e festas infantis.</p>
-            <span class="price">R$ 40,00</span>
-        </div>
-
-        <div class="service-card">
-            <h2>Maquiagem Express</h2>
-            <p>Rápida e prática, ideal para fotos e compromissos de dia.</p>
-            <span class="price">R$ 80,00</span>
-        </div>
-
-        <div class="service-card">
-            <h2>Maquiagem Social</h2>
-            <p>Perfeita para eventos sociais, jantares e ocasiões especiais.</p>
-            <span class="price">R$ 100,00</span>
-        </div>
-
-        <div class="service-card">
-            <h2>Maquiagem Blindada</h2>
-            <p>Longa duração, resistente ao calor e suor, ideal para festas e casamentos.</p>
-            <span class="price">R$ 120,00</span>
-        </div>
+  <!-- Seção Serviços -->
+  <section id="servicos">
+    <div class="service-card">
+      <h3>Maquiagem Infantil</h3>
+      <p>Leve e divertida, perfeita para aniversários e festas.</p>
+      <span class="price">R$ 40,00</span>
+      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20infantil" target="_blank">Agendar 💬</a>
     </div>
 
-    <!-- ===== BOTÕES FIXOS ===== -->
-    <div class="cta-fixed">
-        <a href="https://wa.me/5549984111810?text=Ol%C3%A1,%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" target="_blank" class="whatsapp"> Agendar maquiagem 💄</a>
-        <a href="https://instagram.com/annetischlermakeup" target="_blank"> Instagram 📸</a>
+    <div class="service-card">
+      <h3>Maquiagem Express</h3>
+      <p>Rápida e prática, ideal para fotos e compromissos de dia.</p>
+      <span class="price">R$ 80,00</span>
+      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20express" target="_blank">Agendar 💬</a>
     </div>
 
-    <!-- ===== RODAPÉ ===== -->
-    <footer>
-        <p>&copy; 2025 Anne Tischler Makeup | Santa Cecília - SC</p>
-        <p>
-            <a href="https://instagram.com/annetischlermakeup" target="_blank">Instagram</a> |
-            <a href="https://wa.me/5549984111810" target="_blank">WhatsApp</a> |
-            <a href="mailto:annetischlerr@gmail.com">E-mail</a>
-        </p>
-    </footer>
+    <div class="service-card">
+      <h3>Maquiagem Social</h3>
+      <p>Perfeita para eventos, jantares e ocasiões especiais.</p>
+      <span class="price">R$ 100,00</span>
+      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20social" target="_blank">Agendar 💬</a>
+    </div>
 
+    <div class="service-card">
+      <h3>Maquiagem Blindada</h3>
+      <p>Longa duração, resistente ao calor e suor. Ideal para festas e casamentos.</p>
+      <span class="price">R$ 120,00</span>
+      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20blindada" target="_blank">Agendar 💬</a>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>📞 <a href="https://wa.me/5549984111810" target="_blank">WhatsApp: (49) 98411-1810</a></p>
+    <p>📸 <a href="https://www.instagram.com/annetischlermakeup" target="_blank">@annetischlermakeup</a></p>
+    <p>📧 <a href="mailto:annetischlerr@gmail.com">annetischlerr@gmail.com</a></p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Anne Tischler Makeup - Santa Cecília - SC.</p>
+  </footer>
+
+  <!-- ==== BOTÕES FLUTUANTES ==== -->
+  <div class="float-container">
+    <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário" 
+       target="_blank" class="float-btn whatsapp" title="Agende pelo WhatsApp">💬</a>
+    <a href="https://www.instagram.com/annetischlermakeup" 
+       target="_blank" class="float-btn instagram" title="Siga-me no Instagram!">📸</a>
+  </div>
 </body>
 </html>
-
-
-
-
