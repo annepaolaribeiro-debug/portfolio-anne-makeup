@@ -66,6 +66,7 @@
             font-size: 1.1em;
         }
 
+        /* Botões fixos */
         .cta-fixed {
             position: fixed;
             bottom: 20px;
@@ -77,7 +78,7 @@
         }
 
         .cta-fixed a {
-            background-color: #EAA6C0; /* rosinha chamativo */
+            background-color: #EAA6C0; /* rosinha */
             color: white;
             text-decoration: none;
             padding: 12px 18px;
@@ -88,35 +89,68 @@
             transition: transform 0.2s ease, opacity 0.3s ease;
         }
 
+        .cta-fixed a.whatsapp {
+            background-color: #25D366; /* verde WhatsApp */
+        }
+
         .cta-fixed a:hover {
             transform: translateY(-3px);
             opacity: 0.85;
         }
 
+        /* Formulário */
+        .contact form {
+            max-width: 400px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact input, 
+        .contact textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #D4AF37;
+        }
+
+        .contact button {
+            background-color: #EAA6C0;
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 10px;
+            background-color: #f8eaf6;
+            color: #333;
+            margin-top: 40px;
+            border-top: 2px solid #D4AF37;
+        }
+
+        footer a {
+            color: #D4AF37;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .service-card span.price {
-                font-size: 1em;
-            }
-
-            .cta-fixed a {
-                font-size: 0.9em;
-                padding: 10px 18px;
-            }
+            body { padding: 10px; }
+            h1 { font-size: 1.8em; }
+            .service-card span.price { font-size: 1em; }
+            .cta-fixed a { font-size: 0.9em; padding: 10px 18px; }
         }
     </style>
 </head>
 <body>
 
     <h1>Anne Tischler Makeup</h1>
-    <p class="intro">Maquiadora em Santa Cecília • SC. Realço sua beleza com naturalidade e confiança. ✨</p>
+    <p class="intro">Sou Anne Tischler, maquiadora profissional em Santa Cecília • SC. Realço sua beleza com naturalidade e confiança. ✨</p>
 
     <div class="portfolio">
         <div class="service-card">
@@ -144,13 +178,34 @@
         </div>
     </div>
 
-    <!-- Botões fixos chamativos -->
+    <!-- ===== FORMULÁRIO DE CONTATO ===== -->
+    <section class="contact" style="margin-top:40px; text-align:center;">
+        <h2 style="color:#D4AF37;">Agende sua maquiagem</h2>
+        <form action="https://formsubmit.co/annetischler@gmail.com" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="text" name="evento" placeholder="Evento" required>
+            <input type="date" name="data" required>
+            <input type="text" name="cidade" placeholder="Cidade" required>
+            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- ===== BOTÕES FIXOS ===== -->
     <div class="cta-fixed">
-        <a href="https://wa.me/5549984111810?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20make" target="_blank">Fale com Anne</a>
-        <a href="https://instagram.com/annetischlermakeup" target="_blank">Veja o Instagram</a>
+        <a href="https://wa.me/5549984111810?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20make" target="_blank" class="whatsapp">Agendar maquiagem 💄</a>
+        <a href="https://instagram.com/annetischlermakeup" target="_blank">Instagram</a>
     </div>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <p>&copy; 2025 Anne Tischler Makeup | Santa Cecília - SC</p>
+        <p>
+            <a href="https://instagram.com/annetischlermakeup" target="_blank">Instagram</a> |
+            <a href="https://wa.me/5549984111810" target="_blank">WhatsApp</a> |
+            <a href="mailto:annetischler@gmail.com">E-mail</a>
+        </p>
+    </footer>
 
 </body>
 </html>
-
-
