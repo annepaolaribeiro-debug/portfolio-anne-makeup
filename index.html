@@ -1,258 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anne Tischler Makeup</title>
-  <meta name="description" content="Portfólio de maquiagem Anne Tischler em Santa Cecília - SC. Realce sua beleza com confiança e naturalidade.">
-  <meta property="og:title" content="Anne Tischler Makeup">
-  <meta property="og:image" content="images/logo.png">
-  <meta property="og:description" content="Maquiadora em Santa Cecília - SC. Maquiagens para todas as ocasiões.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anne Tischler Makeup</title>
+<style>
+body { font-family: "Poppins", sans-serif; margin:0; padding:0; background:#fff8f9; text-align:center; }
+.logo { display:block; margin:30px auto; width:250px; }
+.navbar { background:#fff; border-bottom:2px solid #D4AF37; padding:10px 0; position:sticky; top:0; z-index:100; }
+.navbar a { color:#D4AF37; text-decoration:none; margin:0 15px; font-weight:bold; }
+.navbar a:hover { color:#EAA6C0; }
 
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff8f9;
-      color: #333;
-      text-align: center;
-    }
+#servicos { max-width:900px; margin:40px auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; padding:0 20px; }
+.service-card { background:#fff; border:1px solid #D4AF37; border-radius:15px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:0.3s; text-align:left; position:relative; }
+.service-card:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.15); }
+.service-card h3 { color:#D4AF37; margin-bottom:10px; }
+.service-card p { font-size:0.95em; margin-bottom:5px; }
+.btn-card { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.btn-card button { flex:1; padding:10px; border:none; border-radius:20px; font-weight:bold; cursor:pointer; color:#fff; transition:0.3s; }
+.agendar-btn { background:#EAA6C0; }
+.consultar-btn { background:#FF69B4; }
+.btn-card button:hover { opacity:0.85; }
 
-    /* Logo */
-    .logo {
-      display: block;
-      margin: 30px auto 10px auto;
-      width: 250px;
-      height: auto;
-    }
+#contato { background:#fff; border-top:2px solid #D4AF37; padding:40px 20px; }
+#contato h2 { color:#D4AF37; margin-bottom:15px; }
+#contato p { margin:8px 0; font-size:1em; }
+#contato a { color:#EAA6C0; text-decoration:none; font-weight:bold; }
+#contato a:hover { text-decoration:underline; }
 
-    /* Menu fixo */
-    .navbar {
-      text-align: center;
-      background-color: #fff;
-      border-bottom: 2px solid #D4AF37;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+footer { background:#fff; border-top:1px solid #D4AF37; padding:15px; font-size:0.9em; color:#666; margin-bottom:50px; }
 
-    .navbar a {
-      color: #D4AF37;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* Botão único Informações */
+.float-panel { position:fixed; bottom:25px; right:25px; display:flex; flex-direction:column; gap:12px; z-index:1000; }
+.float-panel button, .float-panel a { border:none; border-radius:50px; padding:12px 18px; font-weight:bold; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; text-decoration:none; color:#fff; display:flex; align-items:center; justify-content:center; }
+.float-panel button:hover, .float-panel a:hover { opacity:0.85; }
+.float-whatsapp { background:#25D366; }
+.float-instagram { background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.float-info { background:#FF1493; }
 
-    .navbar a:hover {
-      color: #EAA6C0;
-    }
+/* Modal */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); animation: fadeIn 0.3s; }
+.modal-content { background:#FF69B4; margin:10% auto; padding:25px; border-radius:20px; width:85%; max-width:450px; text-align:left; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.3); animation: slideIn 0.4s; position:relative; }
+.close { color:#fff; float:right; font-size:28px; font-weight:bold; position:absolute; right:15px; top:10px; cursor:pointer; }
+.close:hover { color:#ddd; }
+.modal-content h3 { margin-bottom:15px; font-size:1.5em; text-align:center; }
+.modal-content p { margin:8px 0; font-size:1em; }
+.modal-content a { display:inline-block; margin-top:15px; background:#EAA6C0; color:#fff; text-decoration:none; padding:12px 25px; border-radius:25px; font-weight:bold; font-size:1em; transition:0.3s; }
+.modal-content a:hover { opacity:0.85; }
 
-    /* Seção de Serviços */
-    #servicos {
-      max-width: 900px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-    }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideIn { from {transform:translateY(-50px); opacity:0;} to {transform:translateY(0); opacity:1;} }
 
-    .service-card {
-      background: #fff;
-      border: 1px solid #D4AF37;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    .service-card h3 {
-      color: #D4AF37;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      font-size: 0.95em;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      color: #EAA6C0;
-      font-weight: bold;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .service-card a {
-      background-color: #EAA6C0;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
-
-    .service-card a:hover {
-      background-color: #D48CA8;
-    }
-
-    /* Seção Contato */
-    #contato {
-      background-color: #fff;
-      border-top: 2px solid #D4AF37;
-      margin-top: 50px;
-      padding: 40px 20px;
-    }
-
-    #contato h2 {
-      color: #D4AF37;
-      margin-bottom: 15px;
-    }
-
-    #contato p {
-      font-size: 1em;
-      margin: 8px 0;
-    }
-
-    #contato a {
-      color: #EAA6C0;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    #contato a:hover {
-      text-decoration: underline;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #fff;
-      border-top: 1px solid #D4AF37;
-      padding: 15px;
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    /* ==== BOTÕES FLUTUANTES ==== */
-    .float-container {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-    .float-btn {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      color: #fff;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .float-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-    }
-
-    .float-btn.instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-
-    .float-btn.whatsapp {
-      background-color: #25D366;
-    }
-
-    @media (max-width: 480px) {
-      .float-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-      }
-    }
-  </style>
+/* Responsivo - evitar sobreposição no celular */
+@media (max-width:480px){
+  .float-panel { flex-direction: row; bottom:10px; right:10px; gap:8px; }
+  .float-panel button, .float-panel a { padding:10px 14px; font-size:14px; }
+  #servicos { margin-bottom:80px; } /* espaço para painel flutuante */
+}
+</style>
 </head>
-
 <body>
-  <!-- Logo -->
-  <img src="logoanne.png.png" alt="Anne Tischler Makeup" class="logo">
 
-  <!-- Menu -->
-  <nav class="navbar">
-    <a href="#servicos">Serviços</a>
-    <a href="#contato">Contato</a>
-  </nav>
+<img src="logoanne.png.png" alt="Anne Tischler Makeup" class="logo">
 
-  <!-- Seção Serviços -->
-  <section id="servicos">
-    <div class="service-card">
-      <h3>Maquiagem Infantil</h3>
-      <p>Leve e divertida, perfeita para aniversários e festas.</p>
-      <span class="price">R$ 40,00</span>
-      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20infantil" target="_blank">Agendar 💬</a>
+<nav class="navbar">
+  <a href="#servicos">Serviços</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="servicos">
+  <div class="service-card">
+    <h3>Maquiagem Infantil</h3>
+    <p>Leve e divertida, perfeita para aniversários e festas.</p>
+    <div class="btn-card">
+      <button class="agendar-btn" onclick="agendar('Maquiagem Infantil')">Agendar</button>
+      <button class="consultar-btn" onclick="consultarValor('Maquiagem Infantil','20 a 30 min','40')">Consultar Valor</button>
     </div>
-
-    <div class="service-card">
-      <h3>Maquiagem Express</h3>
-      <p>Rápida e prática, ideal para fotos e compromissos de dia.</p>
-      <span class="price">R$ 80,00</span>
-      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20express" target="_blank">Agendar 💬</a>
-    </div>
-
-    <div class="service-card">
-      <h3>Maquiagem Social</h3>
-      <p>Perfeita para eventos, jantares e ocasiões especiais.</p>
-      <span class="price">R$ 100,00</span>
-      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20social" target="_blank">Agendar 💬</a>
-    </div>
-
-    <div class="service-card">
-      <h3>Maquiagem Blindada</h3>
-      <p>Longa duração, resistente ao calor e suor. Ideal para festas e casamentos.</p>
-      <span class="price">R$ 120,00</span>
-      <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário%20para%20maquiagem%20blindada" target="_blank">Agendar 💬</a>
-    </div>
-  </section>
-
-  <!-- Seção Contato -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>📞 <a href="https://wa.me/5549984111810" target="_blank">WhatsApp: (49) 98411-1810</a></p>
-    <p>📸 <a href="https://www.instagram.com/annetischlermakeup" target="_blank">@annetischlermakeup</a></p>
-    <p>📧 <a href="mailto:annetischlerr@gmail.com">annetischlerr@gmail.com</a></p>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2025 Anne Tischler Makeup - Santa Cecília - SC.</p>
-  </footer>
-
-  <!-- ==== BOTÕES FLUTUANTES ==== -->
-  <div class="float-container">
-    <a href="https://wa.me/5549984111810?text=Olá,%20gostaria%20de%20agendar%20um%20horário" 
-       target="_blank" class="float-btn whatsapp" title="Agende pelo WhatsApp">💬</a>
-    <a href="https://www.instagram.com/annetischlermakeup" 
-       target="_blank" class="float-btn instagram" title="Siga-me no Instagram!">📸</a>
   </div>
+
+  <div class="service-card">
+    <h3>Maquiagem Express</h3>
+    <p>Rápida e prática, ideal para fotos e compromissos de dia.</p>
+    <div class="btn-card">
+      <button class="agendar-btn" onclick="agendar('Maquiagem Express')">Agendar</button>
+      <button class="consultar-btn" onclick="consultarValor('Maquiagem Express','30 a 45 min','80')">Consultar Valor</button>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <h3>Maquiagem Social</h3>
+    <p>Perfeita para eventos, jantares e ocasiões especiais.</p>
+    <div class="btn-card">
+      <button class="agendar-btn" onclick="agendar('Maquiagem Social')">Agendar</button>
+      <button class="consultar-btn" onclick="consultarValor('Maquiagem Social','45 min a 1h','100')">Consultar Valor</button>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <h3>Maquiagem Blindada</h3>
+    <p>Longa duração, resistente ao calor e suor. Ideal para festas e casamentos.</p>
+    <div class="btn-card">
+      <button class="agendar-btn" onclick="agendar('Maquiagem Blindada')">Agendar</button>
+      <button class="consultar-btn" onclick="consultarValor('Maquiagem Blindada','50 min a 1h30min','120')">Consultar Valor</button>
+    </div>
+  </div>
+</section>
+
+<!-- Painel flutuante -->
+<div class="float-panel">
+  <a href="https://wa.me/5549984111810" target="_blank" class="float-whatsapp" title="WhatsApp">💬</a>
+  <a href="https://www.instagram.com/annetischlermakeup" target="_blank" class="float-instagram" title="Instagram">📸</a>
+  <button class="float-info" onclick="abrirInfo()">ℹ️</button>
+</div>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>📞 <a href="https://wa.me/5549984111810" target="_blank">WhatsApp: (49) 98411-1810</a></p>
+  <p>📸 <a href="https://www.instagram.com/annetischlermakeup" target="_blank">@annetischlermakeup</a></p>
+  <p>📧 <a href="mailto:annetischlerr@gmail.com">annetischlerr@gmail.com</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Anne Tischler Makeup - Santa Cecília - SC.</p>
+</footer>
+
+<!-- Modal Valor -->
+<div id="modalValor" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeValor">&times;</span>
+    <h3 id="modalTitulo">Serviço</h3>
+    <p id="modalDuracao">Duração: </p>
+    <p id="modalPreco">R$ 0,00</p>
+    <a id="modalAgendar" href="#" target="_blank">Quero Agendar</a>
+  </div>
+</div>
+
+<!-- Modal Informações -->
+<div id="modalInfo" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeInfo">&times;</span>
+    <h3>Informações de Agendamento</h3>
+    <p>⏱ Tolerância de atraso: 10 minutos</p>
+    <p>💰 Forma de pagamento: PIX ou Dinheiro</p>
+    <p>🔑 Chave PIX: 125.909.899-03</p>
+    <p>💵 Solicito 30% do valor para reservar o horário</p>
+    <p>🧴 Venha com a pele limpa e hidratada</p>
+    <p>📅 Cancelamentos devem ser avisados com 24h de antecedência</p>
+    <p>⏰ Chegue no horário para melhor atendimento</p>
+    <a href="https://wa.me/5549984111810?text=Quero%20agendar%20um%20horário" target="_blank">Quero Agendar</a>
+  </div>
+</div>
+
+<script>
+const modalV = document.getElementById("modalValor");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalPreco = document.getElementById("modalPreco");
+const modalDuracao = document.getElementById("modalDuracao");
+const modalAgendar = document.getElementById("modalAgendar");
+const closeValor = document.getElementById("closeValor");
+
+const modalI = document.getElementById("modalInfo");
+const closeInfo = document.getElementById("closeInfo");
+
+// Funções
+function consultarValor(servico, duracao, valor){
+  modalTitulo.innerText = servico;
+  modalDuracao.innerText = 'Duração: ' + duracao;
+  modalPreco.innerText = 'R$ ' + valor + ',00';
+  modalAgendar.href = `https://wa.me/5549984111810?text=${encodeURIComponent('Quero agendar ' + servico)}`;
+  modalV.style.display="block";
+}
+
+function agendar(servico){
+  window.open(`https://wa.me/5549984111810?text=${encodeURIComponent('Quero agendar ' + servico)}`,'_blank');
+}
+
+function abrirInfo(){
+  modalI.style.display="block";
+}
+
+// Fechar modais
+closeValor.onclick = () => modalV.style.display="none";
+closeInfo.onclick = () => modalI.style.display="none";
+
+window.onclick = function(event){
+  if(event.target == modalV) modalV.style.display="none";
+  if(event.target == modalI) modalI.style.display="none";
+}
+</script>
+
 </body>
 </html>
